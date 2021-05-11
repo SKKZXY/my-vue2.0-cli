@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <img alt="Vue logo" src="" />
+    <HelloWorld msg="Welcome" />
   </div>
 </template>
 
@@ -13,6 +13,12 @@ export default {
   name: "Home",
   components: {
     HelloWorld,
+  },
+  data() {
+    return {};
+  },
+  mounted() {
+    console.log("Home.vue-process", process.env);
   },
 };
 </script>

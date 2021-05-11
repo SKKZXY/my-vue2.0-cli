@@ -19,6 +19,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/handlescroll",
+    name: "handlescroll",
+    component: () => 
+    import(/* webpackChunkName: "about" */ "../views/handlescroll.vue"),
+  },
 ];
 
 const router = new VueRouter({

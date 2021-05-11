@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 
 Vue.config.productionTip = false;
+console.log("main.js process", process.env);
 
 new Vue({
   router,
