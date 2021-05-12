@@ -1,8 +1,11 @@
 <template>
   <div class="handlescroll">
     <div class="head"></div>
-    <div ref="fixedTab" class="tab" :class="{tabfixed:isFixed}">
-      <div v-for="(item,index) in tabList" :key="index" class="tab-item" :class="{active:item.code==activeTab}" @click="changeTab(item.code)">{{item.name}}</div>
+    <!-- tab必须嵌套一个外层div添加ref，给内层的tab本身添加固定定位    不嵌套的话会造成向上滚动时tab已固定（距离页面顶部为0），取不到tab元素距离页面顶部的距离 -->   
+    <div ref="fixedTab">
+      <div class="tab" :class="{tabfixed:isFixed}">
+        <div v-for="(item,index) in tabList" :key="index" class="tab-item" :class="{active:item.code==activeTab}" @click="changeTab(item.code)">{{item.name}}</div>
+      </div>
     </div>
     <div ref="one" class="module one">
       模块一内容
@@ -54,6 +57,7 @@ export default {
       const srcollH = scrollTop // 页面滚动的高度
       const tabH = tab.offsetHeight // tab自身高度
       const tabOffsetTop = tab.offsetTop  //tab距离html页面顶部的高度
+      console.log("tab距离顶部", tabOffsetTop)
       srcollH > tabOffsetTop ? (this.isFixed = true) : (this.isFixed = false)
       if (srcollH === 0 && tabOffsetTop == 0) {
         return
@@ -73,13 +77,13 @@ export default {
       const dom = this.$refs[value]
       dom.scrollIntoView()
       this.activeTab = value
-      // let timer = null
-      // clearTimeout(timer)
-      // timer = setTimeout(() => {
+      let timer = null
+      clearTimeout(timer)
+      timer = setTimeout(() => {
         const scrollBox = document.scrollingElement
         const tab = this.$refs.fixedTab
         scrollBox.scrollTop = scrollBox.scrollTop - (tab.offsetHeight)
-      // }, 10)
+      }, 10)
     },
   }
 }
