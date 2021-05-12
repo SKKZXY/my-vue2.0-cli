@@ -1,0 +1,20 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td a{ margin:0; padding:0; }
+
+body{
+  font-family: "微软雅黑","宋体","Arial";
+  color: #666; //全局文字颜色
+  font-size: 13px; //全局文字大小
+}
+
+img,input{border: none;} //去除边框
+
+input,select,textarea{outline:none;} 
+
+select,input,img{vertical-align:middle;}
+
+ul,ol,li{list-style-type:none;} //无序列表的黑点
+
+a{text-decoration:none; color:#72ace3;} //a默认的下划线，默认颜色
+a:focus{outline:none; -moz-outline:none} //去除虚线？
+
+table{border-collapse:collapse;} 
