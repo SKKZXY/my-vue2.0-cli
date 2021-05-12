@@ -13,6 +13,7 @@
     <div ref="three" class="module three">
       模块三内容
     </div>
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -115,10 +116,11 @@ export default {
       height: 600px;
     }
     .one {
-      
     }
     .two {
-
+    }
+    .footer{
+      height: 600px;
     }
   }
 </style>
