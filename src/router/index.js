@@ -25,6 +25,12 @@ const routes = [
     component: () => 
     import(/* webpackChunkName: "about" */ "../views/handlescroll.vue"),
   },
+  {
+    path: "/comps",
+    name: "comps",
+    component: () => 
+    import(/* webpackChunkName: "about" */ "../views/comps.vue"),
+  },
 ];
 
 const router = new VueRouter({

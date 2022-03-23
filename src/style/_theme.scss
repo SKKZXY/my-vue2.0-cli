@@ -1,0 +1,12 @@
+$color-theme1:blue;
+$color-theme2 : red;
+@mixin theme ($c:yellow) {
+  color: $c;
+  [data-theme="theme1" ] & {
+    color:$color-theme1
+  }
+  [data-theme="theme2" ] & {
+    color:$color-theme2
+  }
+  
+}

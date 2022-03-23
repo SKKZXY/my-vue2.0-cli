@@ -45,8 +45,12 @@ export default {
     }
   },
   mounted(){
+    console.log('handlescroll')
     document.removeEventListener('scroll', this.handleE, false)
     document.addEventListener('scroll', this.handleE, false)
+  },
+  destroyed(){
+    document.removeEventListener('scroll', this.handleE, false)
   },
   methods:{
     handleE(e){

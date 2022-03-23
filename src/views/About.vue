@@ -1,6 +1,7 @@
 <template>
   <div class="about">
-    页面
+    <div>页面</div>
+    <div @click="tz">tiaozhuan</div>
   </div>
 </template>
 
@@ -8,11 +9,19 @@
 export default {
   data () {
     return {
-
+    }
+  },
+  mounted(){
+    console.log('abount')
+  },
+  methods:{
+    tz(){
+      this.$router.push({path:'/handlescroll'})
     }
   }
 }
 </script>
+
 
 <style lang="scss" scoped>
   .about{
